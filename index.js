@@ -6,12 +6,16 @@ const soldier = {
         cartridges: 30
     },
     supplies: 3,
-   fire(){ 
-    this.weapon.cartridges--
-    console.log("бах-бах")
-    if(this.weapon.cartridges === 0){
+   fire(){
+     if(this.weapon.cartridges === 0){
         return console.log("обойма пуста. Перезаредитесь")
-    }
+    }else {this.weapon.cartridges--
+    console.log("бах-бах")}
+
+
+   },
+   getStatus(){
+   console.log( `${this.userName} Здоровье: ${this.health}, Припасы: ${this.supplies}, Кол-Во патронов: ${this.weapon.cartridges}`)
 
    },
    recharge(){
@@ -20,7 +24,7 @@ const soldier = {
     console.log("Перезарядка...")
     if(this.supplies === 0){
         console.log('не осталось припасов!')
-    }
+    }   
 
    },
    hurt(){
